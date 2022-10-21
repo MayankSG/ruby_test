@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ruby_program:
+    image: ruby:latest
+    # --metadata is to count metadata about what was fetched, it will be stored in output.txt 
+    command: bash -c 'bundle install && ruby web_page.rb --metadata "https://www.facebook.com/"'
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
